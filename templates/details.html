@@ -1,0 +1,13 @@
+{% extends 'base.html'%}
+{% block content %}
+<h1>got discharge={% if detail.got_discharge %} yes {% else %} no {% endif %}</h1>
+<h1>{{detail.patient_name}}</h1>
+<h1>{{detail.contact_no}}</h1>
+<h1>{{detail.addmision_date}}</h1>
+<h1>{{detail.ward_no}}</h1>
+<h1>{{detail.amount}}</h1>
+<h1>{{detail.disease}}</h1>
+{% if not detail.got_discharge %}
+<a href="/update_info/?patient_id={{detail.id}}">update</a>
+{% endif %}
+{%  endblock %}

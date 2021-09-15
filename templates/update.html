@@ -1,0 +1,15 @@
+{% extends 'base.html'%}
+{% block content %}
+<h1>{{current_details.patient_name}}</h1>
+<h1>{{current_details.contact_no}}</h1>
+<form action="/update_info/" method="post">
+{% csrf_token %}
+    <label for="">{{current_details.disease}} {{update_form.disease}}</label><br><br>
+    <label for="">{{current_details.ward_no}} {{update_form.ward_no}}</label><br><br>
+    <label for="">{{current_details.amount}} {{update_form.amount}}</label><br><br>
+    <input type="hidden" name="patient_id" value={{current_details.id}} ><br><br>
+    got discharge: <input type="checkbox" name="discharge" value={{True}}>Yes <br><br>
+   
+    <button type="submit">update</button>
+</form>
+{% endblock %}

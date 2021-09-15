@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<table>
+    <tr>
+    <th>Sr.No</th>
+    <th>Name</th>
+    <th>contact</th>
+    <th>ward.no</th>
+    </tr>
+ {% for detail in patient_detail %}
+    <tr>
+    <td>{{detail.id}}</td>
+    <td><a href="/details/?patient_id={{detail.id}}">{{detail.patient_name}}</a></td>
+    <td>{{detail.contact_no}}</td>
+    <td>{{detail.ward_no}}</td>
+
+    </tr>
+    {% endfor %}
+</table>
+
+
+
+{% endblock %}

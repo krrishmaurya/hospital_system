@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<form action="add_patient"  method="POST">
+{% csrf_token %}
+{{patient_form}}
+<button type="submit">submit</button>
+</form>
+
+
+
+
+{% endblock %}
