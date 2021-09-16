@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
+
+{% if request.user.is_authenticated %}
 <table>
     <tr>
     <th>Sr.No</th>
@@ -17,6 +19,7 @@
     </tr>
     {% endfor %}
 </table>
+{% endif %}
 
 
 

@@ -69,6 +69,29 @@ class Update_detail(View):
         return redirect('/')
 
 
+class Book_appointment(View):
+    def get(self,request):
+        content={
+            'page_tittle':'appointment',
+            'appointment_form':forms.Appointment_form()
+        }
+        return render(request,'appointment.html',content)
+     
+    def post(self,request):
+         patient_name=request.POST['patient_name']
+         contact_no=request.POST['contact_no']
+         disease=request.POST['disease']
+         appointment_date=request.POST['appointment_date']
+         new_appointment=models.Appointment(
+             patient_name=patient_name,
+             contact_no=contact_no,
+             disease=disease,
+             appointment_date=appointment_date
+         )
+         new_appointment.save()
+         return redirect('/')
+
+
 
 
             

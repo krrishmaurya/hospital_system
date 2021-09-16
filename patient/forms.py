@@ -19,4 +19,8 @@ class Update_form(Add_patient):
     amount= forms.IntegerField(required=False)
     disease=forms.CharField(required=False)
 
- 
+class Appointment_form(forms.Form):
+    patient_name=forms.CharField(max_length=30)
+    contact_no=forms.IntegerField()
+    appointment_date = forms.DateField(widget=forms.DateInput(attrs={'type': 'date'}))
+    disease=forms.CharField(max_length=40)

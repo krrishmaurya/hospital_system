@@ -12,13 +12,25 @@
         <li>
             <a href="/">home</a>
         </li>
+       
+        {% if request.user.is_authenticated %}
+        <li>
+            <a href="/add_patient">New_patient</a>
+        </li>
+        <li>
+            <a href="/logout">Logout</a>
+        </li>
+        <li>
+            <a href="/view_appointment">View</a>
+        </li>
+        {% else %}
         <li>
             <a href="/login">Login</a>
         </li>
         <li>
-            <a href="/add_patient">New_patient</a>
+            <a href="/appointment">book appointment</a>
         </li>
-        
+        {% endif %}
     </ul>
     {% block content %}
     {% endblock %}
